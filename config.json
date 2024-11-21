@@ -1,0 +1,61 @@
+{
+  "tokenizer_class": "T5Tokenizer",
+  "language": ["ja"],
+  "architectures": [
+    "mPLUGDocOwl2"
+  ],
+  "auto_map": {
+    "AutoConfig": "configuration_ulusage_docdet.UlusageDocDetConfig",
+    "AutoModel": "modeling_ulusage_docdet.UlusageDocDet2",
+    "AutoModelForCausalLM": "modeling_ulusage_docdet.UlusageDocDet2"
+  },
+  "attention_bias": false,
+  "bos_token_id": 1,
+  "eos_token_id": 2,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.02,
+  "intermediate_size": 11008,
+  "max_position_embeddings": 4096,
+  "model_type": "ulusage_docdet",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 32,
+  "pretraining_tp": 1,
+  "rms_norm_eps": 1e-06,
+  "rope_scaling": null,
+  "rope_theta": 10000.0,
+  "tie_word_embeddings": false,
+  "transformers_version": "4.39.3",
+  "use_cache": true,
+  "visual_config": {
+    "visual_hrcompressor": {
+      "layer": 2,
+      "high_reso_cross_num_att_heads": 16,
+      "high_reso_cross_hid_size": 4096,
+      "high_reso_cross_dropout": 0.0
+    },
+    "visual_hreducer": {
+      "conv_shape": "1x4",
+      "hidden_size": 1024
+    },
+    "visual_model": {
+      "attention_dropout": 0.0,
+      "hidden_act": "quick_gelu",
+      "hidden_size": 1024,
+      "image_size": 504,
+      "initializer_factor": 1.0,
+      "initializer_range": 0.02,
+      "intermediate_size": 4096,
+      "layer_norm_eps": 1e-06,
+      "model_type": "japanese_ulusage_docdet",
+      "num_attention_heads": 16,
+      "num_channels": 3,
+      "num_hidden_layers": 24,
+      "patch_size": 14,
+      "projection_dim": 768,
+      "use_flash_attn": false
+    }
+  },
+  "vocab_size": 64000
+}
